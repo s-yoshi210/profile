@@ -27,10 +27,11 @@ class CategoryController extends AdminController
         $grid = new Grid(new Category());
 
         $grid->column('id', __('Id'));
-        $grid->column('categorie', __('Categorie'));
-        $grid->column('sort', __('Sort'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('categorie', __('カテゴリ'));
+        $grid->column('sort', __('ソート'));
+        $grid->column('comment', __('コメント'));
+        $grid->column('created_at', __('作成日時'));
+        $grid->column('updated_at', __('更新日時'));
 
         return $grid;
     }
@@ -46,10 +47,11 @@ class CategoryController extends AdminController
         $show = new Show(Category::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('categorie', __('Categorie'));
-        $show->field('sort', __('Sort'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('categorie', __('カテゴリ'));
+        $show->field('sort', __('ソート'));
+        $show->field('comment', __('コメント'));
+        $show->field('created_at', __('作成日時'));
+        $show->field('updated_at', __('更新日時'));
 
         return $show;
     }
@@ -63,8 +65,9 @@ class CategoryController extends AdminController
     {
         $form = new Form(new Category());
 
-        $form->text('categorie', __('Categorie'));
-        $form->number('sort', __('Sort'));
+        $form->text('categorie', __('カテゴリ'));
+        $form->number('sort', __('ソート'));
+        $form->text('comment', __('コメント'));
 
         return $form;
     }
