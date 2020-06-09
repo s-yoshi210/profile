@@ -60,7 +60,7 @@
                 <div class="col-md-10 py-4">
                     <div class="card text-left">
                         <div class="card-header font-weight-bold">
-                            <i class="far fa-file-code mx-3"></i><span>個人紹介サイト</span>
+                            <i class="far fa-file-code mx-3"></i><span>自己紹介サイト</span>
                         </div>
                         <div class="card-body">
                             <table class="table">
@@ -104,7 +104,7 @@
                 <div class="col-md-10 py-4">
                     <div class="card text-left">
                         <div class="card-header font-weight-bold">
-                            <i class="far fa-file-code mx-3"></i><span>個人紹介サイト</span>
+                            <i class="far fa-file-code mx-3"></i><span>自己紹介サイト</span>
                         </div>
                         <div class="card-body">
                             <table class="table">
