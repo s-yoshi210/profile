@@ -16,4 +16,5 @@ Route::group([
     $router->resource('/categories', CategoryController::class);
     $router->resource('/skill', SkillController::class);
     $router->resource('/actual_result', ActualResultController::class);
+    $router->resource('/development', DevelopmentController::class);
 });
