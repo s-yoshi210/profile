@@ -27,16 +27,16 @@ class ProfileController extends AdminController
         $grid = new Grid(new Profile());
 
         $grid->column('id', __('Id'));
-        $grid->column('content', __('Content'));
-        $grid->column('picture', __('Picture'));
-        $grid->column('git_account', __('Git Account'));
+        $grid->column('content', __('プロフィール内容'));
+        $grid->column('picture', __('プロフィール画像'));
+        $grid->column('git_account', __('Gitアカウント名'));
         $grid->column('git_url', __('Git URL'));
-        $grid->column('twitter_account', __('Twitter Account'));
+        $grid->column('twitter_account', __('Twitterアカウント名'));
         $grid->column('twitter_url', __('Twitter URL'));
-        $grid->column('qiita_account', __('Qiita Account'));
+        $grid->column('qiita_account', __('Qiitaアカウント名'));
         $grid->column('qiita_url', __('Qiita URL'));
-        $grid->column('created_at', __('Created at'));
-        $grid->column('updated_at', __('Updated at'));
+        $grid->column('created_at', __('作成日時'));
+        $grid->column('updated_at', __('更新日時'));
 
         return $grid;
     }
@@ -52,16 +52,16 @@ class ProfileController extends AdminController
         $show = new Show(Profile::findOrFail($id));
 
         $show->field('id', __('Id'));
-        $show->field('content', __('Content'));
-        $show->field('picture', __('Picture'));
-        $show->field('git_account', __('Git Account'));
+        $show->field('content', __('プロフィール内容'));
+        $show->field('picture', __('プロフィール画像'));
+        $show->field('git_account', __('Gitアカウント名'));
         $show->field('git_url', __('Git URL'));
-        $show->field('twitter_account', __('Twitter Account'));
+        $show->field('twitter_account', __('Twitterアカウント名'));
         $show->field('twitter_url', __('Twitter URL'));
-        $show->field('qiita_account', __('Qiita Account'));
+        $show->field('qiita_account', __('Qiitaアカウント名'));
         $show->field('qiita_url', __('Qiita URL'));
-        $show->field('created_at', __('Created at'));
-        $show->field('updated_at', __('Updated at'));
+        $show->field('created_at', __('作成日時'));
+        $show->field('updated_at', __('更新日時'));
 
         return $show;
     }
@@ -75,13 +75,13 @@ class ProfileController extends AdminController
     {
         $form = new Form(new Profile());
 
-        $form->textarea('content', __('Content'));
-        $form->image('picture', __('Picture'));
-        $form->text('git_account', __('Git Account'));
+        $form->textarea('content', __('プロフィール内容'));
+        $form->image('picture', __('プロフィール画像'));
+        $form->text('git_account', __('Gitアカウント名'));
         $form->text('git_url', __('Git URL'));
-        $form->text('twitter_account', __('Twitter Account'));
+        $form->text('twitter_account', __('Twitterアカウント名'));
         $form->text('twitter_url', __('Twitter URL'));
-        $form->text('qiita_account', __('Qiita Account'));
+        $form->text('qiita_account', __('Qiitaアカウント名'));
         $form->text('qiita_url', __('Qiita URL'));
 
         return $form;
