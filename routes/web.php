@@ -14,21 +14,21 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('profile');
+    return view('index');
 });
 
 Route::get('/skill', function () {
-    return view('skill');
+    return view('skill.index');
 });
 
 Route::get('/actual_results', function () {
-    return view('actual_results');
+    return view('actual_results.index');
 });
 
 Route::get('/development', function () {
-    return view('development');
+    return view('development.index');
 });
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('contact.index');
 });
