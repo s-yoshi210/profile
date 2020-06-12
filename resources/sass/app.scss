@@ -1,79 +1,8 @@
-html {
-//    font-size: 62.5%;
-}
-body {
-//    font-size: 1.6em;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    font-weight: normal;
-    text-align: center;
-    background-color: #f6f6f4;
-    color:#484848;
-}
-
-#app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    nav {
-        .nav-link:hover {
-            background-color: rgba(65,184,131,0.5);
-            transition: 0.5s;
-        }
-    }
-    main {
-        flex: 1;
-    }
-    .profile {
-        img {
-            width: 100px;
-            height: 100px;
-        }
-    }
-    footer {
-        height: 50px;
-        margin-top: auto;
-    }
-    .minh-300 {
-        min-height: 300px;
-    }
-    .skill {
-        .card-header {
-            font-size: 1.5rem;
-        }
-    }
-    .actual_results,
-    .development{
-        .card-body {
-            padding: 0 1.25rem 0 1.25rem;
-        }
-        table {
-            table-layout:fixed;
-            th {
-                width: 120px;
-            }
-        }
-    }
-}
-
-@media screen and (min-width: 768px) {
-    #app {
-        nav {
-            height: 60px;
-            .nav-link {
-                padding: 16px 10px 20px 10px;
-            }
-            .nav-link:hover {
-                background-color: rgba(65,184,131,0.5);
-                transition: 0.5s;
-            }
-        }
-        .profile {
-            img {
-                width: 200px;
-                height: 200px;
-            }
-        }
-    }
-}
+@import "layout/header";
+@import "layout/footer";
+@import "layout/layout";
+@import "pages/home";
+@import "pages/skill";
+@import "pages/actual_result";
+@import "pages/development";
+@import "pages/contact";
