@@ -2338,157 +2338,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TheHeader: _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__["default"],
     TheFooter: _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      skills: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$http.get("/api/skill").then(function (response) {
+      _this.skills = response.data;
+    });
   }
 });
 
@@ -3678,7 +3545,64 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("the-header"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("the-footer")],
+    [
+      _c("the-header"),
+      _vm._v(" "),
+      _c("main", { staticClass: "skill my-4" }, [
+        _c("div", { staticClass: "container text-center" }, [
+          _c("h1", { staticClass: "mb-4" }, [_vm._v("スキルセット")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row justify-content-center" },
+            _vm._l(_vm.skills, function(category) {
+              return _c(
+                "div",
+                { key: category.id, staticClass: "col-md-6 py-3" },
+                [
+                  _c("div", { staticClass: "card" }, [
+                    _c(
+                      "div",
+                      {
+                        staticClass:
+                          "card-header bg-primary text-white font-weight-bold"
+                      },
+                      [
+                        _c("i", { staticClass: "fas fa-desktop mr-3" }),
+                        _c("span", [_vm._v(_vm._s(category.categorie))])
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("p", [_vm._v(_vm._s(category.comment))]),
+                      _vm._v(" "),
+                      _c("table", { staticClass: "table table-borderless" }, [
+                        _vm._m(0, true),
+                        _vm._v(" "),
+                        _c(
+                          "tbody",
+                          _vm._l(category.skills, function(skill) {
+                            return _c("tr", { key: skill.id }, [
+                              _c("td", [_vm._v(_vm._s(skill.technology))]),
+                              _vm._v(" "),
+                              _c("td", [_vm._v(_vm._s(skill.years))])
+                            ])
+                          }),
+                          0
+                        )
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("the-footer")
+    ],
     1
   )
 }
@@ -3687,286 +3611,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "skill my-4" }, [
-      _c("div", { staticClass: "container text-center" }, [
-        _c("h1", { staticClass: "mb-4" }, [_vm._v("スキルセット")]),
+    return _c("thead", [
+      _c("tr", [
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
         _vm._v(" "),
-        _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-md-6 py-3" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "card-header bg-primary text-white font-weight-bold"
-                },
-                [
-                  _c("i", { staticClass: "fas fa-desktop mr-3" }),
-                  _c("span", [_vm._v("フロントエンド")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", [_vm._v("案件で使用していました。")]),
-                _vm._v(" "),
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
-                      _vm._v(" "),
-                      _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("経験年数")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("JavaScript")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("jQuery")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 py-3" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "card-header bg-success text-white font-weight-bold"
-                },
-                [
-                  _c("i", { staticClass: "fas fa-desktop mr-3" }),
-                  _c("span", [_vm._v("バックエンド")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", [_vm._v("案件で使用していました。")]),
-                _vm._v(" "),
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
-                      _vm._v(" "),
-                      _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("経験年数")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("JavaScript")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("jQuery")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 py-3" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "card-header bg-secondary text-white font-weight-bold"
-                },
-                [
-                  _c("i", { staticClass: "fas fa-desktop mr-3" }),
-                  _c("span", [_vm._v("DB")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", [_vm._v("案件で使用していました。")]),
-                _vm._v(" "),
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
-                      _vm._v(" "),
-                      _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("経験年数")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("JavaScript")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("jQuery")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 py-3" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "card-header bg-warning text-white font-weight-bold"
-                },
-                [
-                  _c("i", { staticClass: "fas fa-desktop mr-3" }),
-                  _c("span", [_vm._v("デザイン")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", [_vm._v("案件で使用していました。")]),
-                _vm._v(" "),
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
-                      _vm._v(" "),
-                      _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("経験年数")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("JavaScript")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("jQuery")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 py-3" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "div",
-                {
-                  staticClass: "card-header bg-info text-white font-weight-bold"
-                },
-                [
-                  _c("i", { staticClass: "fas fa-desktop mr-3" }),
-                  _c("span", [_vm._v("インフラ・サーバー")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", [_vm._v("案件で使用していました。")]),
-                _vm._v(" "),
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
-                      _vm._v(" "),
-                      _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("経験年数")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("JavaScript")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("jQuery")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-6 py-3" }, [
-            _c("div", { staticClass: "card" }, [
-              _c(
-                "div",
-                {
-                  staticClass:
-                    "card-header bg-danger text-white font-weight-bold"
-                },
-                [
-                  _c("i", { staticClass: "fas fa-desktop mr-3" }),
-                  _c("span", [_vm._v("その他")])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("p", [_vm._v("案件で使用していました。")]),
-                _vm._v(" "),
-                _c("table", { staticClass: "table table-borderless" }, [
-                  _c("thead", [
-                    _c("tr", [
-                      _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
-                      _vm._v(" "),
-                      _c("th", { attrs: { scope: "col" } }, [
-                        _vm._v("経験年数")
-                      ])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tbody", [
-                    _c("tr", [
-                      _c("td", [_vm._v("JavaScript")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ]),
-                    _vm._v(" "),
-                    _c("tr", [
-                      _c("td", [_vm._v("jQuery")]),
-                      _vm._v(" "),
-                      _c("td", [_vm._v("5年")])
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("経験年数")])
       ])
     ])
   }
