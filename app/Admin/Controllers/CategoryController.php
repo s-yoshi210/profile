@@ -28,6 +28,7 @@ class CategoryController extends AdminController
 
         $grid->column('id', __('Id'));
         $grid->column('categorie', __('カテゴリ'));
+        $grid->column('color', __('カテゴリ色'));
         $grid->column('sort', __('ソート'));
         $grid->column('comment', __('コメント'));
         $grid->column('created_at', __('作成日時'));
@@ -48,6 +49,7 @@ class CategoryController extends AdminController
 
         $show->field('id', __('Id'));
         $show->field('categorie', __('カテゴリ'));
+        $show->field('color', __('カテゴリ色'));
         $show->field('sort', __('ソート'));
         $show->field('comment', __('コメント'));
         $show->field('created_at', __('作成日時'));
@@ -66,6 +68,7 @@ class CategoryController extends AdminController
         $form = new Form(new Category());
 
         $form->text('categorie', __('カテゴリ'));
+        $form->text('color', __('カテゴリ色'));
         $form->number('sort', __('ソート'));
         $form->text('comment', __('コメント'));
 
