@@ -142,15 +142,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TheHeader: _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__["default"],
     TheFooter: _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      picture: '',
+      content: '',
+      git_url: '',
+      git_account: '',
+      twitter_url: '',
+      twitter_account: '',
+      qiita_url: '',
+      qiita_account: ''
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$http.get("/api/profile").then(function (response) {
+      _this.picture = response.data.picture;
+      _this.content = response.data.content;
+      _this.git_url = response.data.git_url;
+      _this.git_account = response.data.git_account;
+      _this.twitter_url = response.data.twitter_url;
+      _this.twitter_account = response.data.twitter_account;
+      _this.qiita_url = response.data.qiita_url;
+      _this.qiita_account = response.data.qiita_account;
+    });
   }
 });
 
@@ -788,72 +811,63 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("the-header"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("the-footer")],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "profile mt-4 mt-md-5" }, [
-      _c("div", { staticClass: "container text-center" }, [
-        _c("h1", [_vm._v("プロフィール")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row justify-content-center mt-md-5" }, [
-          _c("div", { staticClass: "col-md-5" }, [
-            _c("img", {
-              staticClass: "rounded-circle",
-              attrs: { src: "/images/猫.png", alt: "" }
-            })
-          ]),
+    [
+      _c("the-header"),
+      _vm._v(" "),
+      _c("main", { staticClass: "profile mt-4 mt-md-5" }, [
+        _c("div", { staticClass: "container text-center" }, [
+          _c("h1", [_vm._v("プロフィール")]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-5 mt-3 text-left" }, [
-            _c("div", { staticClass: "row" }, [
-              _c("div", { staticClass: "col-md-12 minh-300" }, [
-                _c("p", [
-                  _vm._v(
-                    "\n                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n                            "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "col-md-12" }, [
-                _c("table", { staticClass: "table text-center" }, [
-                  _c("tr", [
-                    _c("th", [_vm._v("GitHub")]),
+          _c("div", { staticClass: "row justify-content-center mt-md-5" }, [
+            _c("div", { staticClass: "col-md-5" }, [
+              _c("img", {
+                staticClass: "rounded-circle",
+                attrs: { src: _vm.picture, alt: "" }
+              })
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "col-md-5 mt-3 text-left" }, [
+              _c("div", { staticClass: "row" }, [
+                _c("div", { staticClass: "col-md-12 minh-300" }, [
+                  _c("p", [
+                    _vm._v(
+                      "\n                  " +
+                        _vm._s(_vm.content) +
+                        "\n              "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("table", { staticClass: "table text-center" }, [
+                    _c("tr", [
+                      _c("th", [_vm._v("GitHub")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: _vm.git_url } }, [
+                          _vm._v(_vm._s(_vm.git_account))
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "a",
-                        { attrs: { href: "https://github.com/s-yoshi210" } },
-                        [_vm._v("s-yoshi210")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", [_vm._v("Twitter")]),
+                    _c("tr", [
+                      _c("th", [_vm._v("Twitter")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: _vm.twitter_url } }, [
+                          _vm._v(_vm._s(_vm.twitter_account))
+                        ])
+                      ])
+                    ]),
                     _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "a",
-                        { attrs: { href: "https://twitter.com/SYoshi210" } },
-                        [_vm._v("Yoshi")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", [_vm._v("Qiita")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "a",
-                        { attrs: { href: "https://qiita.com/s-yoshi210" } },
-                        [_vm._v("s-yoshi210")]
-                      )
+                    _c("tr", [
+                      _c("th", [_vm._v("Qiita")]),
+                      _vm._v(" "),
+                      _c("td", [
+                        _c("a", { attrs: { href: _vm.qiita_url } }, [
+                          _vm._v(_vm._s(_vm.qiita_account))
+                        ])
+                      ])
                     ])
                   ])
                 ])
@@ -861,10 +875,14 @@ var staticRenderFns = [
             ])
           ])
         ])
-      ])
-    ])
-  }
-]
+      ]),
+      _vm._v(" "),
+      _c("the-footer")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
