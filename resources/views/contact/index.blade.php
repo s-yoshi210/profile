@@ -13,7 +13,7 @@
     <title>お問い合わせ</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+{{--    <script src="{{ asset('js/app.js') }}" defer></script>--}}
 
     <!-- Fonts -->
     <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
@@ -28,7 +28,8 @@
 <div id="app">
     <app />
 </div>
-<script src="/js/contact.js"></script>
+
+<script src="{{ asset('js/app.js') }}" defer></script>
 <script src="{{ asset('js/jquery-3.4.1.slim.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
 </body>
