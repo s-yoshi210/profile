@@ -2193,29 +2193,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      profile: [] // picture: '',
-      // content: '',
-      // git_url: '',
-      // git_account: '',
-      // twitter_url: '',
-      // twitter_account: '',
-      // qiita_url: '',
-      // qiita_account: ''
-
+      profile: []
     };
   },
   mounted: function mounted() {
     var _this = this;
 
     this.$http.get("/api/profile").then(function (response) {
-      _this.profile = response.data; // this.picture = response.data.picture;
-      // this.content = response.data.content;
-      // this.git_url = response.data.git_url;
-      // this.git_account = response.data.git_account;
-      // this.twitter_url = response.data.twitter_url;
-      // this.twitter_account = response.data.twitter_account;
-      // this.qiita_url = response.data.qiita_url;
-      // this.qiita_account = response.data.qiita_account;
+      _this.profile = response.data;
     });
   }
 });
@@ -3250,7 +3235,12 @@ var render = function() {
           _c("h1", [_vm._v("プロフィール")]),
           _vm._v(" "),
           _c("div", { staticClass: "row justify-content-center mt-md-5" }, [
-            _vm._m(0),
+            _c("div", { staticClass: "col-md-5" }, [
+              _c("img", {
+                staticClass: "rounded-circle",
+                attrs: { src: _vm.profile.picture, alt: "" }
+              })
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "col-md-5 mt-3 text-left" }, [
               _c("div", { staticClass: "row" }, [
@@ -3270,7 +3260,7 @@ var render = function() {
                       _c("th", [_vm._v("GitHub")]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: "profile.git_url" } }, [
+                        _c("a", { attrs: { href: _vm.profile.git_url } }, [
                           _vm._v(_vm._s(_vm.profile.git_account))
                         ])
                       ])
@@ -3280,7 +3270,7 @@ var render = function() {
                       _c("th", [_vm._v("Twitter")]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: "profile.twitter_url" } }, [
+                        _c("a", { attrs: { href: _vm.profile.twitter_url } }, [
                           _vm._v(_vm._s(_vm.profile.twitter_account))
                         ])
                       ])
@@ -3290,7 +3280,7 @@ var render = function() {
                       _c("th", [_vm._v("Qiita")]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: "profile.qiita_url" } }, [
+                        _c("a", { attrs: { href: _vm.profile.qiita_url } }, [
                           _vm._v(_vm._s(_vm.profile.qiita_account))
                         ])
                       ])
@@ -3308,19 +3298,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "col-md-5" }, [
-      _c("img", {
-        staticClass: "rounded-circle",
-        attrs: { src: "profile.picture", alt: "" }
-      })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -151,28 +151,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      picture: '',
-      content: '',
-      git_url: '',
-      git_account: '',
-      twitter_url: '',
-      twitter_account: '',
-      qiita_url: '',
-      qiita_account: ''
+      profile: []
     };
   },
   mounted: function mounted() {
     var _this = this;
 
     this.$http.get("/api/profile").then(function (response) {
-      _this.picture = response.data.picture;
-      _this.content = response.data.content;
-      _this.git_url = response.data.git_url;
-      _this.git_account = response.data.git_account;
-      _this.twitter_url = response.data.twitter_url;
-      _this.twitter_account = response.data.twitter_account;
-      _this.qiita_url = response.data.qiita_url;
-      _this.qiita_account = response.data.qiita_account;
+      _this.profile = response.data;
     });
   }
 });
@@ -822,7 +808,7 @@ var render = function() {
             _c("div", { staticClass: "col-md-5" }, [
               _c("img", {
                 staticClass: "rounded-circle",
-                attrs: { src: _vm.picture, alt: "" }
+                attrs: { src: _vm.profile.picture, alt: "" }
               })
             ]),
             _vm._v(" "),
@@ -832,7 +818,7 @@ var render = function() {
                   _c("p", [
                     _vm._v(
                       "\n                  " +
-                        _vm._s(_vm.content) +
+                        _vm._s(_vm.profile.content) +
                         "\n              "
                     )
                   ])
@@ -844,8 +830,8 @@ var render = function() {
                       _c("th", [_vm._v("GitHub")]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: _vm.git_url } }, [
-                          _vm._v(_vm._s(_vm.git_account))
+                        _c("a", { attrs: { href: _vm.profile.git_url } }, [
+                          _vm._v(_vm._s(_vm.profile.git_account))
                         ])
                       ])
                     ]),
@@ -854,8 +840,8 @@ var render = function() {
                       _c("th", [_vm._v("Twitter")]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: _vm.twitter_url } }, [
-                          _vm._v(_vm._s(_vm.twitter_account))
+                        _c("a", { attrs: { href: _vm.profile.twitter_url } }, [
+                          _vm._v(_vm._s(_vm.profile.twitter_account))
                         ])
                       ])
                     ]),
@@ -864,8 +850,8 @@ var render = function() {
                       _c("th", [_vm._v("Qiita")]),
                       _vm._v(" "),
                       _c("td", [
-                        _c("a", { attrs: { href: _vm.qiita_url } }, [
-                          _vm._v(_vm._s(_vm.qiita_account))
+                        _c("a", { attrs: { href: _vm.profile.qiita_url } }, [
+                          _vm._v(_vm._s(_vm.profile.qiita_account))
                         ])
                       ])
                     ])
