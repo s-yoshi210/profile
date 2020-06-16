@@ -26,7 +26,7 @@
 
 <body>
 <div id="app">
-    <app />
+    <router-view />
 </div>
 
 <script src="{{ asset('js/app.js') }}" defer></script>

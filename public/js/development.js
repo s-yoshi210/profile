@@ -149,68 +149,24 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TheHeader: _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__["default"],
     TheFooter: _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      developments: []
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$http.get("/api/development").then(function (response) {
+      _this.developments = response.data;
+    });
   }
 });
 
@@ -848,198 +804,97 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("the-header"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("the-footer")],
+    [
+      _c("the-header"),
+      _vm._v(" "),
+      _c("main", { staticClass: "development mt-4" }, [
+        _c("div", { staticClass: "container text-center" }, [
+          _c("h1", { staticClass: "mb-4" }, [_vm._v("個人開発成果物")]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "row justify-content-center" },
+            _vm._l(_vm.developments, function(development) {
+              return _c(
+                "div",
+                { key: development.id, staticClass: "col-md-10 py-4" },
+                [
+                  _c("div", { staticClass: "card text-left" }, [
+                    _c("div", { staticClass: "card-header font-weight-bold" }, [
+                      _c("i", { staticClass: "far fa-file-code mx-3" }),
+                      _c("span", [_vm._v(_vm._s(development.title))])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "card-body" }, [
+                      _c("table", { staticClass: "table" }, [
+                        _c("tr", [
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("開発理由")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(development.reason))])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("内容")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(development.content))])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("開発環境")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(development.development))])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("GitHub")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [
+                            _c("a", { attrs: { href: development.git_url } }, [
+                              _vm._v("こちら")
+                            ])
+                          ])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("デモサイト")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(development.demo))])
+                        ]),
+                        _vm._v(" "),
+                        _c("tr", [
+                          _c("th", { staticClass: "text-center" }, [
+                            _vm._v("コメント")
+                          ]),
+                          _vm._v(" "),
+                          _c("td", [_vm._v(_vm._s(development.comment))])
+                        ])
+                      ])
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("the-footer")
+    ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "development mt-4" }, [
-      _c("div", { staticClass: "container text-center" }, [
-        _c("h1", { staticClass: "mb-4" }, [_vm._v("個人開発成果物")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-md-10 py-4" }, [
-            _c("div", { staticClass: "card text-left" }, [
-              _c("div", { staticClass: "card-header font-weight-bold" }, [
-                _c("i", { staticClass: "far fa-file-code mx-3" }),
-                _c("span", [_vm._v("自己紹介サイト")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("table", { staticClass: "table" }, [
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("開発理由")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [_vm._v("内容")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("開発環境")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("GitHub")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "https://github.com/s-yoshi210/profile"
-                          }
-                        },
-                        [_vm._v("こちら")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("デモサイト")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("https://xxxxxxxxx")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("簡単ログイン機能を使用してください。")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("コメント")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                        ccccccccccccccccccccccccccccccc\n                                    "
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "col-md-10 py-4" }, [
-            _c("div", { staticClass: "card text-left" }, [
-              _c("div", { staticClass: "card-header font-weight-bold" }, [
-                _c("i", { staticClass: "far fa-file-code mx-3" }),
-                _c("span", [_vm._v("自己紹介サイト")])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "card-body" }, [
-                _c("table", { staticClass: "table" }, [
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("開発理由")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [_vm._v("内容")]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa\n                                    "
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("開発環境")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [_vm._v("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbb")])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("GitHub")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c(
-                        "a",
-                        {
-                          attrs: {
-                            href: "https://github.com/s-yoshi210/profile"
-                          }
-                        },
-                        [_vm._v("こちら")]
-                      )
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("デモサイト")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _c("a", { attrs: { href: "#" } }, [
-                        _vm._v("https://xxxxxxxxx")
-                      ]),
-                      _vm._v(" "),
-                      _c("p", [_vm._v("簡単ログイン機能を使用してください。")])
-                    ])
-                  ]),
-                  _vm._v(" "),
-                  _c("tr", [
-                    _c("th", { staticClass: "text-center" }, [
-                      _vm._v("コメント")
-                    ]),
-                    _vm._v(" "),
-                    _c("td", [
-                      _vm._v(
-                        "\n                                        ccccccccccccccccccccccccccccccc\n                                    "
-                      )
-                    ])
-                  ])
-                ])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
