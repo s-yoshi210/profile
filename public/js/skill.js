@@ -152,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
       skills: []
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     var _this = this;
 
     this.$http.get("/api/skill").then(function (response) {
@@ -814,8 +814,8 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass:
-                          "card-header bg-primary text-white font-weight-bold"
+                        staticClass: "card-header text-white font-weight-bold",
+                        class: "bg-" + category.color
                       },
                       [
                         _c("i", { staticClass: "fas fa-desktop mr-3" }),

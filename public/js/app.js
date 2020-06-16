@@ -3363,8 +3363,8 @@ var render = function() {
                     _c(
                       "div",
                       {
-                        staticClass:
-                          "card-header bg-primary text-white font-weight-bold"
+                        staticClass: "card-header text-white font-weight-bold",
+                        class: "bg-" + category.color
                       },
                       [
                         _c("i", { staticClass: "fas fa-desktop mr-3" }),

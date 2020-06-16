@@ -10,7 +10,7 @@
 
         <div class="col-md-6 py-3" v-for="category in skills" :key="category.id">
           <div class="card">
-            <div class="card-header bg-primary text-white font-weight-bold">
+            <div class="card-header text-white font-weight-bold" :class='`bg-${category.color}`'>
               <i class="fas fa-desktop mr-3"></i><span>{{ category.categorie }}</span>
             </div>
             <div class="card-body">
@@ -55,7 +55,7 @@ export default {
       skills :[]
     };
   },
-  mounted() {
+  created() {
     this.$http.get("/api/skill").then(response => {
       this.skills = response.data;
     });
