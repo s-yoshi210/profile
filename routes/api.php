@@ -23,4 +23,5 @@ Route::group(['middleware' => ['api']], function () {
     Route::get('skill', 'Api\SkillController@index');
     Route::get('actual_result', 'Api\ActualResultController@index');
     Route::get('development', 'Api\DevelopmentController@index');
+    Route::post('/mail/inquiry', 'MailSendController@inquiry');
 });

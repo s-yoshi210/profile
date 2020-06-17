@@ -47,6 +47,15 @@ body {
   min-height: 300px;
 }
 
+#app .error_message {
+  color: red;
+  text-align: left;
+}
+
+#app .emailSentMessage {
+  font-size: 1.2rem;
+}
+
 #app .profile img {
   width: 100px;
   height: 100px;

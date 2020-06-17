@@ -19,4 +19,11 @@ body {
     .minh-300 {
         min-height: 300px;
     }
+    .error_message {
+        color: red;
+        text-align: left;
+    }
+    .emailSentMessage {
+        font-size: 1.2rem;
+    }
 }

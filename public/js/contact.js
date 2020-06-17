@@ -141,12 +141,51 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     TheHeader: _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__["default"],
     TheFooter: _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      errors: [],
+      emailSent: false,
+      fullName: '',
+      email: '',
+      iquiry: ''
+    };
+  },
+  methods: {
+    postInquiry: function postInquiry() {
+      if (!confirm('送信します。よろしいですか？')) {
+        return;
+      }
+
+      var url = '/api/mail/inquiry';
+      var self = this;
+      var params = {
+        full_name: self.fullName,
+        email: self.email,
+        iquiry: self.iquiry
+      };
+      this.$http.post(url, params).then(function (res) {
+        if (res.data.result) {
+          // メール送信完了画面に遷移する
+          self.emailSent = true;
+        }
+      })["catch"](function (e) {
+        var errors = {};
+
+        for (var key in e.response.data.errors) {
+          errors[key] = e.response.data.errors[key].join('<br>');
+        }
+
+        self.errors = errors;
+      });
+    }
   }
 });
 
@@ -784,94 +823,211 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    [_c("the-header"), _vm._v(" "), _vm._m(0), _vm._v(" "), _c("the-footer")],
-    1
-  )
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("main", { staticClass: "contact mt-4" }, [
-      _c("div", { staticClass: "container" }, [
-        _c("h1", { staticClass: "mb-4" }, [_vm._v("お問い合わせ")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "row justify-content-center" }, [
-          _c("div", { staticClass: "col-md-9 py-4" }, [
-            _c("form", { attrs: { action: "", method: "post" } }, [
-              _c("div", { staticClass: "form-group row mb-3" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "col-md-3 col-form-label text-left text-md-right",
-                    attrs: { for: "inputName" }
-                  },
-                  [_vm._v("お名前")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-9" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: { type: "text", id: "inputName" }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row mb-3" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "col-md-3 col-form-label text-left text-md-right",
-                    attrs: { for: "inputMailAddress" }
-                  },
-                  [_vm._v("メールアドレス")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-9" }, [
-                  _c("input", {
-                    staticClass: "form-control",
-                    attrs: { type: "email", id: "inputMailAddress" }
-                  })
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "form-group row mb-3" }, [
-                _c(
-                  "label",
-                  {
-                    staticClass:
-                      "col-md-3 col-form-label text-left text-md-right",
-                    attrs: { for: "inputContent" }
-                  },
-                  [_vm._v("お問い合わせ内容")]
-                ),
-                _vm._v(" "),
-                _c("div", { staticClass: "col-md-9" }, [
-                  _c("textarea", {
-                    staticClass: "form-control",
-                    attrs: { id: "inputContent", cols: "30", rows: "7" }
-                  })
-                ])
-              ]),
+    [
+      _c("the-header"),
+      _vm._v(" "),
+      _c("main", { staticClass: "contact mt-4" }, [
+        _c("div", { staticClass: "container" }, [
+          _c("h1", { staticClass: "mb-4" }, [_vm._v("お問い合わせ")]),
+          _vm._v(" "),
+          _c("div", { staticClass: "row justify-content-center" }, [
+            _c("div", { staticClass: "col-md-9 py-4" }, [
+              _c(
+                "form",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: !_vm.emailSent,
+                      expression: "!emailSent"
+                    }
+                  ],
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.postInquiry($event)
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "form-group row mb-3" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "col-md-3 col-form-label text-left text-md-right",
+                        attrs: { for: "inputName" }
+                      },
+                      [_vm._v("お名前")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-9" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model.trim",
+                            value: _vm.fullName,
+                            expression: "fullName",
+                            modifiers: { trim: true }
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: { type: "text", id: "inputName", required: "" },
+                        domProps: { value: _vm.fullName },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.fullName = $event.target.value.trim()
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass: "error_message",
+                        domProps: { innerHTML: _vm._s(_vm.errors.full_name) }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row mb-3" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "col-md-3 col-form-label text-left text-md-right",
+                        attrs: { for: "inputMailAddress" }
+                      },
+                      [_vm._v("メールアドレス")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-9" }, [
+                      _c("input", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model.trim",
+                            value: _vm.email,
+                            expression: "email",
+                            modifiers: { trim: true }
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          type: "email",
+                          id: "inputMailAddress",
+                          required: ""
+                        },
+                        domProps: { value: _vm.email },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.email = $event.target.value.trim()
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass: "error_message",
+                        domProps: { innerHTML: _vm._s(_vm.errors.email) }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("div", { staticClass: "form-group row mb-3" }, [
+                    _c(
+                      "label",
+                      {
+                        staticClass:
+                          "col-md-3 col-form-label text-left text-md-right",
+                        attrs: { for: "inputContent" }
+                      },
+                      [_vm._v("お問い合わせ内容")]
+                    ),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "col-md-9" }, [
+                      _c("textarea", {
+                        directives: [
+                          {
+                            name: "model",
+                            rawName: "v-model.trim",
+                            value: _vm.iquiry,
+                            expression: "iquiry",
+                            modifiers: { trim: true }
+                          }
+                        ],
+                        staticClass: "form-control",
+                        attrs: {
+                          id: "inputContent",
+                          cols: "30",
+                          rows: "7",
+                          placeholder: "お問い合わせ内容をご入力下さい。",
+                          required: ""
+                        },
+                        domProps: { value: _vm.iquiry },
+                        on: {
+                          input: function($event) {
+                            if ($event.target.composing) {
+                              return
+                            }
+                            _vm.iquiry = $event.target.value.trim()
+                          },
+                          blur: function($event) {
+                            return _vm.$forceUpdate()
+                          }
+                        }
+                      }),
+                      _vm._v(" "),
+                      _c("div", {
+                        staticClass: "error_message",
+                        domProps: { innerHTML: _vm._s(_vm.errors.iquiry) }
+                      })
+                    ])
+                  ]),
+                  _vm._v(" "),
+                  _c("button", { staticClass: "btn btn-success btn-lg my-1" }, [
+                    _vm._v("送信")
+                  ])
+                ]
+              ),
               _vm._v(" "),
               _c(
-                "button",
+                "div",
                 {
-                  staticClass: "btn btn-success btn-lg my-1",
-                  attrs: { type: "submit" }
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.emailSent,
+                      expression: "emailSent"
+                    }
+                  ],
+                  staticClass: "emailSentMessage"
                 },
-                [_vm._v("送信")]
+                [_vm._v("メッセージが送信されました。ありがとうございました。")]
               )
             ])
           ])
         ])
-      ])
-    ])
-  }
-]
+      ]),
+      _vm._v(" "),
+      _c("the-footer")
+    ],
+    1
+  )
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
