@@ -2,12 +2,9 @@
 <div>
   <the-header></the-header>
 
-  <!-- メイン -->
   <main class="actual_results mt-4">
     <div class="container text-center">
-      <!-- タイトル -->
       <h1 class="mb-4">過去実績</h1>
-      <!-- コンテンツ -->
       <div class="row justify-content-center">
         <div class="col-md-10 py-3" v-for="result in actual_results" :key="result.id">
           <div class="card text-left">
@@ -33,6 +30,7 @@
           </div>
         </div>
       </div>
+      <Loading v-show="loading"></Loading>
     </div>
   </main>
 
@@ -44,20 +42,24 @@
 <script>
 import TheHeader from "../layout/TheHeader";
 import TheFooter from "../layout/TheFooter";
+import Loading from "../Loading";
 
 export default {
   components: {
       TheHeader,
       TheFooter,
+      Loading
   },
   data() {
     return {
-      actual_results: []
+      actual_results: [],
+      loading: true
     }
   },
-  mounted() {
+  created() {
     this.$http.get("/api/actual_result").then(response => {
       this.actual_results = response.data;
+      this.loading = false;
     });
   }
 };

@@ -35,6 +35,7 @@
           <div class="emailSentMessage" v-show="emailSent">メッセージが送信されました。ありがとうございました。</div>
         </div>
       </div>
+      <Loading v-show="loading"></Loading>
     </div>
   </main>
 
@@ -46,20 +47,26 @@
 <script>
   import TheHeader from "../layout/TheHeader";
   import TheFooter from "../layout/TheFooter";
+  import Loading from "../Loading";
 
   export default {
     components: {
         TheHeader,
         TheFooter,
+        Loading
     },
     data() {
       return {
         errors: [],
         emailSent: false,
+        loading: true,
         fullName: '',
         email: '',
         iquiry: ''
       }
+    },
+    created() {
+      this.loading = false;
     },
     methods: {
       postInquiry() {

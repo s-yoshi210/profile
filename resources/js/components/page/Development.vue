@@ -42,6 +42,7 @@
           </div>
         </div>
       </div>
+      <Loading v-show="loading"></Loading>
     </div>
   </main>
 
@@ -53,20 +54,24 @@
 <script>
 import TheHeader from "../layout/TheHeader";
 import TheFooter from "../layout/TheFooter";
+import Loading from "../Loading";
 
 export default {
   components: {
     TheHeader,
     TheFooter,
+    Loading
   },
   data() {
     return {
-      developments: []
+      developments: [],
+      loading: true
     }
   },
-  mounted() {
+  created() {
     this.$http.get("/api/development").then(response => {
       this.developments = response.data;
+      this.loading = false;
     });
   }
 };

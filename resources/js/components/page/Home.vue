@@ -35,6 +35,7 @@
           </div>
         </div>
       </div>
+      <loading v-show="loading"></loading>
     </div>
   </main>
 
@@ -46,20 +47,24 @@
 <script>
 import TheHeader from "../layout/TheHeader";
 import TheFooter from "../layout/TheFooter";
+import Loading from "../Loading"
 
 export default {
   components: {
       TheHeader,
       TheFooter,
+      Loading
   },
   data() {
     return {
-      profile: []
+      profile: [],
+      loading: true
     }
   },
-  mounted() {
+  created() {
     this.$http.get("/api/profile").then(response => {
       this.profile = response.data;
+      this.loading = false;
     });
   }
 };

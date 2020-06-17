@@ -2,12 +2,10 @@
 <div>
   <the-header></the-header>
 
-  <!-- メイン -->
   <main class="skill my-4">
     <div class="container text-center">
       <h1 class="mb-4">スキルセット</h1>
       <div class="row justify-content-center">
-
         <div class="col-md-6 py-3" v-for="category in skills" :key="category.id">
           <div class="card">
             <div class="card-header text-white font-weight-bold" :class='`bg-${category.color}`'>
@@ -33,6 +31,7 @@
           </div>
         </div>
       </div>
+      <loading v-show="loading"></loading>
     </div>
   </main>
 
@@ -42,22 +41,26 @@
 </template>
 
 <script>
-import TheHeader from "../layout/TheHeader";
-import TheFooter from "../layout/TheFooter";
+import TheHeader from "../layout/TheHeader"
+import TheFooter from "../layout/TheFooter"
+import Loading from "../Loading"
 
 export default {
   components: {
       TheHeader,
       TheFooter,
+      Loading
   },
   data() {
     return {
-      skills :[]
+      skills :[],
+      loading: true
     };
   },
-  created() {
+  mounted() {
     this.$http.get("/api/skill").then(response => {
       this.skills = response.data;
+      this.loading = false;
     });
   }
 };

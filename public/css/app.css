@@ -11,6 +11,11 @@ nav .nav-link:hover {
   #app nav .nav-link {
     padding: 16px 10px 20px 10px;
   }
+
+  #app nav .nav-link:hover {
+    background-color: rgba(65, 184, 131, 0.5);
+    transition: 0.5s;
+  }
 }
 
 footer {
