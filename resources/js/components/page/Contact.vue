@@ -35,7 +35,7 @@
           <div class="emailSentMessage" v-show="emailSent">メッセージが送信されました。ありがとうございました。</div>
         </div>
       </div>
-      <Loading v-show="loading"></Loading>
+      <mail-loading v-show="mailLoading"></mail-loading>
     </div>
   </main>
 
@@ -47,26 +47,23 @@
 <script>
   import TheHeader from "../layout/TheHeader";
   import TheFooter from "../layout/TheFooter";
-  import Loading from "../Loading";
+  import MailLoading from "../MailLoading";
 
   export default {
     components: {
         TheHeader,
         TheFooter,
-        Loading
+        MailLoading
     },
     data() {
       return {
         errors: [],
         emailSent: false,
-        loading: true,
+        mailLoading: false,
         fullName: '',
         email: '',
         iquiry: ''
       }
-    },
-    created() {
-      this.loading = false;
     },
     methods: {
       postInquiry() {
@@ -83,10 +80,13 @@
           iquiry: self.iquiry
         };
 
+        self.mailLoading = true;
+
         this.$http.post(url, params)
           .then(res => {
             if(res.data.result) {
               // メール送信完了画面に遷移する
+              self.mailLoading = false;
               self.emailSent = true;
             }
           })

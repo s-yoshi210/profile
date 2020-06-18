@@ -195,7 +195,7 @@ __webpack_require__.r(__webpack_exports__);
       loading: true
     };
   },
-  mounted: function mounted() {
+  created: function created() {
     var _this = this;
 
     this.$http.get("/api/skill").then(function (response) {

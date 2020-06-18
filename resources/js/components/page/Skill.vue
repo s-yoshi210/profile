@@ -57,7 +57,7 @@ export default {
       loading: true
     };
   },
-  mounted() {
+  created() {
     this.$http.get("/api/skill").then(response => {
       this.skills = response.data;
       this.loading = false;
