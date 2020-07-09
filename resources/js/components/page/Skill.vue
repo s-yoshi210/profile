@@ -23,7 +23,8 @@
                 <tbody>
                 <tr v-for="skill in category.skills" :key="skill.id">
                   <td>{{ skill.technology }}</td>
-                  <td>{{ skill.years }}</td>
+                  <td v-if="skill.years < 5">{{ skill.years }}</td>
+                  <td v-else>5年以上</td>
                 </tr>
                 </tbody>
               </table>

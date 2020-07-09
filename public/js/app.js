@@ -2402,6 +2402,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -4516,7 +4517,9 @@ var render = function() {
                               return _c("tr", { key: skill.id }, [
                                 _c("td", [_vm._v(_vm._s(skill.technology))]),
                                 _vm._v(" "),
-                                _c("td", [_vm._v(_vm._s(skill.years))])
+                                skill.years < 5
+                                  ? _c("td", [_vm._v(_vm._s(skill.years))])
+                                  : _c("td", [_vm._v("5年以上")])
                               ])
                             }),
                             0
