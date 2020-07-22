@@ -11,7 +11,7 @@ class MailSendController extends Controller
 {
     public function inquiry(ContactRequest $request){
 
-        $to = 'masdes210@yahoo.co.jp';
+        $to = 'contact@blackneco.com';
         $params = [
             'full_name' => $request->full_name,
             'email' => $request->email,
