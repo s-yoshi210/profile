@@ -12,40 +12,43 @@ class CategoriesTableSeeder extends Seeder
     public function run()
     {
         DB::table('categories')->insert([
+            [
             'id' => 1,
             'categorie' => 'フロントエンド',
             'sort' => 1,
             'comment' => '',
-        ]);
-        DB::table('categories')->insert([
+            'color' => 'primary'
+            ],[
             'id' => 2,
             'categorie' => 'バックエンド',
             'sort' => 2,
             'comment' => '',
-        ]);
-        DB::table('categories')->insert([
+            'color' => 'success'
+            ],[
             'id' => 3,
             'categorie' => 'DB',
             'sort' => 3,
             'comment' => '',
-        ]);
-        DB::table('categories')->insert([
+            'color' => 'secondary'
+            ],[
             'id' => 4,
             'categorie' => 'デザイン',
             'sort' => 4,
             'comment' => '',
-        ]);
-        DB::table('categories')->insert([
+            'color' => 'warning'
+            ],[
             'id' => 5,
             'categorie' => 'インフラ・サーバー',
             'sort' => 5,
             'comment' => '',
-        ]);
-        DB::table('categories')->insert([
+            'color' => 'info'
+            ],[
             'id' => 6,
             'categorie' => 'その他',
             'sort' => 6,
             'comment' => '',
+            'color' => 'danger'
+            ]
         ]);
     }
 }
