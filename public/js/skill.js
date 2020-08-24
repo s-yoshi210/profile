@@ -181,6 +181,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1547,7 +1554,9 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("スキルセット")]),
+            _c("p", { staticClass: "page-title mb-4" }, [
+              _vm._v("スキルセット")
+            ]),
             _vm._v(" "),
             _c(
               "div",
@@ -1574,23 +1583,53 @@ var render = function() {
                       _c("div", { staticClass: "card-body" }, [
                         _c("p", [_vm._v(_vm._s(category.comment))]),
                         _vm._v(" "),
-                        _c("table", { staticClass: "table table-borderless" }, [
-                          _vm._m(0, true),
-                          _vm._v(" "),
-                          _c(
-                            "tbody",
-                            _vm._l(category.skills, function(skill) {
-                              return _c("tr", { key: skill.id }, [
-                                _c("td", [_vm._v(_vm._s(skill.technology))]),
+                        category.categorie != "資格"
+                          ? _c(
+                              "table",
+                              { staticClass: "table table-borderless" },
+                              [
+                                _vm._m(0, true),
                                 _vm._v(" "),
-                                skill.years < 5
-                                  ? _c("td", [_vm._v(_vm._s(skill.years))])
-                                  : _c("td", [_vm._v("5年以上")])
-                              ])
-                            }),
-                            0
-                          )
-                        ])
+                                _c(
+                                  "tbody",
+                                  _vm._l(category.skills, function(skill) {
+                                    return _c("tr", { key: skill.id }, [
+                                      _c("td", [
+                                        _c("b", [
+                                          _vm._v(_vm._s(skill.technology))
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      skill.years < 5
+                                        ? _c("td", [
+                                            _vm._v(_vm._s(skill.years) + "年")
+                                          ])
+                                        : _c("td", [_vm._v("5年以上")])
+                                    ])
+                                  }),
+                                  0
+                                )
+                              ]
+                            )
+                          : _c(
+                              "table",
+                              { staticClass: "table table-borderless" },
+                              [
+                                _c(
+                                  "tbody",
+                                  _vm._l(category.skills, function(skill) {
+                                    return _c("tr", { key: skill.id }, [
+                                      _c("td", [
+                                        _c("b", [
+                                          _vm._v(_vm._s(skill.technology))
+                                        ])
+                                      ])
+                                    ])
+                                  }),
+                                  0
+                                )
+                              ]
+                            )
                       ])
                     ])
                   ]

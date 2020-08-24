@@ -46,6 +46,11 @@ body {
   box-sizing: border-box;
 }
 
+#app main .page-title {
+  font-size: 1.8rem;
+  font-family: bold;
+}
+
 #app .minh-300 {
   min-height: 300px;
 }
@@ -59,9 +64,20 @@ body {
   font-size: 1.2rem;
 }
 
+@media screen and (min-width: 768px) {
+  #app main .page-title {
+    font-size: 2rem;
+    font-family: bold;
+  }
+}
+
 #app .profile img {
   width: 100px;
   height: 100px;
+}
+
+#app .profile .space-pre {
+  white-space: pre;
 }
 
 @media screen and (min-width: 768px) {

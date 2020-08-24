@@ -4,7 +4,7 @@
 
   <main class="skill my-4">
     <div class="container text-center">
-      <h1 class="mb-4">スキルセット</h1>
+      <p class="page-title mb-4">スキルセット</p>
       <div class="row justify-content-center">
         <div class="col-md-6 py-3" v-for="category in skills" :key="category.id">
           <div class="card">
@@ -13,7 +13,7 @@
             </div>
             <div class="card-body">
               <p>{{ category.comment }}</p>
-              <table class="table table-borderless">
+              <table v-if="category.categorie != '資格'" class="table table-borderless">
                 <thead>
                 <tr>
                   <th scope="col">技術</th>
@@ -22,10 +22,17 @@
                 </thead>
                 <tbody>
                 <tr v-for="skill in category.skills" :key="skill.id">
-                  <td>{{ skill.technology }}</td>
-                  <td v-if="skill.years < 5">{{ skill.years }}</td>
+                  <td><b>{{ skill.technology }}</b></td>
+                  <td v-if="skill.years < 5">{{ skill.years }}年</td>
                   <td v-else>5年以上</td>
                 </tr>
+                </tbody>
+              </table>
+              <table v-else class="table table-borderless">
+                <tbody>
+                  <tr v-for="skill in category.skills" :key="skill.id">
+                    <td><b>{{ skill.technology }}</b></td>
+                  </tr>
                 </tbody>
               </table>
             </div>

@@ -1577,7 +1577,9 @@ var render = function() {
           "div",
           { staticClass: "container" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("お問い合わせ")]),
+            _c("p", { staticClass: "page-title mb-4" }, [
+              _vm._v("お問い合わせ")
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "row justify-content-center" }, [
               _c("div", { staticClass: "col-md-9 py-4" }, [

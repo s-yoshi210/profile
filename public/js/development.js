@@ -1557,7 +1557,9 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("個人開発成果物")]),
+            _c("p", { staticClass: "page-title mb-4" }, [
+              _vm._v("個人開発成果物")
+            ]),
             _vm._v(" "),
             _c(
               "div",
@@ -1577,14 +1579,16 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "card-body table-responsive" }, [
                         _c("table", { staticClass: "table" }, [
                           _c("tr", [
                             _c("th", { staticClass: "text-center" }, [
                               _vm._v("開発理由")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.reason))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.reason))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -1592,7 +1596,9 @@ var render = function() {
                               _vm._v("内容")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.content))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.content))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -1600,7 +1606,11 @@ var render = function() {
                               _vm._v("開発環境")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.development))])
+                            _c("td", [
+                              _c("pre", [
+                                _vm._v(_vm._s(development.development))
+                              ])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -1611,7 +1621,13 @@ var render = function() {
                             _c("td", [
                               _c(
                                 "a",
-                                { attrs: { href: development.git_url } },
+                                {
+                                  attrs: {
+                                    target: "_blank",
+                                    rel: "noopener",
+                                    href: development.git_url
+                                  }
+                                },
                                 [_vm._v("こちら")]
                               )
                             ])
@@ -1622,7 +1638,9 @@ var render = function() {
                               _vm._v("デモサイト")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.demo))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.demo))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -1630,7 +1648,9 @@ var render = function() {
                               _vm._v("コメント")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.comment))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.comment))])
+                            ])
                           ])
                         ])
                       ])

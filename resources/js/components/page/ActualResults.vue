@@ -4,7 +4,7 @@
 
   <main class="actual_results mt-4">
     <div class="container text-center">
-      <h1 class="mb-4">過去実績</h1>
+      <p class="page-title mb-4">過去実績</p>
       <div class="row justify-content-center">
         <div class="col-md-10 py-3" v-for="result in actual_results" :key="result.id">
           <div class="card text-left">
@@ -15,15 +15,15 @@
               <table class="table">
                 <tr>
                   <th class="text-center">案件内容</th>
-                  <td>{{ result.content }}</td>
+                  <td><pre>{{ result.content }}</pre></td>
                 </tr>
                 <tr>
                   <th  class="text-center">担当業務</th>
-                  <td>{{ result.job }}</td>
+                  <td><pre>{{ result.job }}</pre></td>
                 </tr>
                 <tr>
                   <th  class="text-center">開発環境</th>
-                  <td>{{ result.environment }}</td>
+                  <td><pre>{{ result.environment }}</pre></td>
                 </tr>
               </table>
             </div>

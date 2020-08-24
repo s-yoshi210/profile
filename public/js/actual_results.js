@@ -1545,7 +1545,7 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("過去実績")]),
+            _c("p", { staticClass: "page-title mb-4" }, [_vm._v("過去実績")]),
             _vm._v(" "),
             _c(
               "div",
@@ -1572,7 +1572,9 @@ var render = function() {
                               _vm._v("案件内容")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(result.content))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(result.content))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -1580,7 +1582,7 @@ var render = function() {
                               _vm._v("担当業務")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(result.job))])
+                            _c("td", [_c("pre", [_vm._v(_vm._s(result.job))])])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -1588,7 +1590,9 @@ var render = function() {
                               _vm._v("開発環境")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(result.environment))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(result.environment))])
+                            ])
                           ])
                         ])
                       ])

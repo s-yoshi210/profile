@@ -2317,10 +2317,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -2360,6 +2356,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layout/TheHeader */ "./resources/js/components/layout/TheHeader.vue");
 /* harmony import */ var _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layout/TheFooter */ "./resources/js/components/layout/TheFooter.vue");
 /* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Loading */ "./resources/js/components/Loading.vue");
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -3872,7 +3875,7 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("過去実績")]),
+            _c("p", { staticClass: "page-title mb-4" }, [_vm._v("過去実績")]),
             _vm._v(" "),
             _c(
               "div",
@@ -3899,7 +3902,9 @@ var render = function() {
                               _vm._v("案件内容")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(result.content))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(result.content))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -3907,7 +3912,7 @@ var render = function() {
                               _vm._v("担当業務")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(result.job))])
+                            _c("td", [_c("pre", [_vm._v(_vm._s(result.job))])])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -3915,7 +3920,9 @@ var render = function() {
                               _vm._v("開発環境")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(result.environment))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(result.environment))])
+                            ])
                           ])
                         ])
                       ])
@@ -3978,7 +3985,9 @@ var render = function() {
           "div",
           { staticClass: "container" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("お問い合わせ")]),
+            _c("p", { staticClass: "page-title mb-4" }, [
+              _vm._v("お問い合わせ")
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "row justify-content-center" }, [
               _c("div", { staticClass: "col-md-9 py-4" }, [
@@ -4232,7 +4241,9 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("個人開発成果物")]),
+            _c("p", { staticClass: "page-title mb-4" }, [
+              _vm._v("個人開発成果物")
+            ]),
             _vm._v(" "),
             _c(
               "div",
@@ -4252,14 +4263,16 @@ var render = function() {
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "card-body" }, [
+                      _c("div", { staticClass: "card-body table-responsive" }, [
                         _c("table", { staticClass: "table" }, [
                           _c("tr", [
                             _c("th", { staticClass: "text-center" }, [
                               _vm._v("開発理由")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.reason))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.reason))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -4267,7 +4280,9 @@ var render = function() {
                               _vm._v("内容")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.content))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.content))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -4275,7 +4290,11 @@ var render = function() {
                               _vm._v("開発環境")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.development))])
+                            _c("td", [
+                              _c("pre", [
+                                _vm._v(_vm._s(development.development))
+                              ])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -4286,7 +4305,13 @@ var render = function() {
                             _c("td", [
                               _c(
                                 "a",
-                                { attrs: { href: development.git_url } },
+                                {
+                                  attrs: {
+                                    target: "_blank",
+                                    rel: "noopener",
+                                    href: development.git_url
+                                  }
+                                },
                                 [_vm._v("こちら")]
                               )
                             ])
@@ -4297,7 +4322,9 @@ var render = function() {
                               _vm._v("デモサイト")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.demo))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.demo))])
+                            ])
                           ]),
                           _vm._v(" "),
                           _c("tr", [
@@ -4305,7 +4332,9 @@ var render = function() {
                               _vm._v("コメント")
                             ]),
                             _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(development.comment))])
+                            _c("td", [
+                              _c("pre", [_vm._v(_vm._s(development.comment))])
+                            ])
                           ])
                         ])
                       ])
@@ -4368,7 +4397,7 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", [_vm._v("プロフィール")]),
+            _c("p", { staticClass: "page-title" }, [_vm._v("プロフィール")]),
             _vm._v(" "),
             _c("div", { staticClass: "row justify-content-center mt-md-5" }, [
               _c("div", { staticClass: "col-md-5" }, [
@@ -4380,14 +4409,8 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "col-md-5 mt-3 text-left" }, [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12 minh-300" }, [
-                    _c("p", [
-                      _vm._v(
-                        "\n                  " +
-                          _vm._s(_vm.profile.content) +
-                          "\n              "
-                      )
-                    ])
+                  _c("div", { staticClass: "col-md-12 minh-300 space-pre" }, [
+                    _vm._v(_vm._s(_vm.profile.content))
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-12" }, [
@@ -4396,9 +4419,17 @@ var render = function() {
                         _c("th", [_vm._v("GitHub")]),
                         _vm._v(" "),
                         _c("td", [
-                          _c("a", { attrs: { href: _vm.profile.git_url } }, [
-                            _vm._v(_vm._s(_vm.profile.git_account))
-                          ])
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                rel: "noopener",
+                                href: _vm.profile.git_url
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.profile.git_account))]
+                          )
                         ])
                       ]),
                       _vm._v(" "),
@@ -4408,7 +4439,13 @@ var render = function() {
                         _c("td", [
                           _c(
                             "a",
-                            { attrs: { href: _vm.profile.twitter_url } },
+                            {
+                              attrs: {
+                                target: "_blank",
+                                rel: "noopener",
+                                href: _vm.profile.twitter_url
+                              }
+                            },
                             [_vm._v(_vm._s(_vm.profile.twitter_account))]
                           )
                         ])
@@ -4418,9 +4455,17 @@ var render = function() {
                         _c("th", [_vm._v("Qiita")]),
                         _vm._v(" "),
                         _c("td", [
-                          _c("a", { attrs: { href: _vm.profile.qiita_url } }, [
-                            _vm._v(_vm._s(_vm.profile.qiita_account))
-                          ])
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                rel: "noopener",
+                                href: _vm.profile.qiita_url
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.profile.qiita_account))]
+                          )
                         ])
                       ])
                     ])
@@ -4481,7 +4526,9 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", { staticClass: "mb-4" }, [_vm._v("スキルセット")]),
+            _c("p", { staticClass: "page-title mb-4" }, [
+              _vm._v("スキルセット")
+            ]),
             _vm._v(" "),
             _c(
               "div",
@@ -4508,23 +4555,53 @@ var render = function() {
                       _c("div", { staticClass: "card-body" }, [
                         _c("p", [_vm._v(_vm._s(category.comment))]),
                         _vm._v(" "),
-                        _c("table", { staticClass: "table table-borderless" }, [
-                          _vm._m(0, true),
-                          _vm._v(" "),
-                          _c(
-                            "tbody",
-                            _vm._l(category.skills, function(skill) {
-                              return _c("tr", { key: skill.id }, [
-                                _c("td", [_vm._v(_vm._s(skill.technology))]),
+                        category.categorie != "資格"
+                          ? _c(
+                              "table",
+                              { staticClass: "table table-borderless" },
+                              [
+                                _vm._m(0, true),
                                 _vm._v(" "),
-                                skill.years < 5
-                                  ? _c("td", [_vm._v(_vm._s(skill.years))])
-                                  : _c("td", [_vm._v("5年以上")])
-                              ])
-                            }),
-                            0
-                          )
-                        ])
+                                _c(
+                                  "tbody",
+                                  _vm._l(category.skills, function(skill) {
+                                    return _c("tr", { key: skill.id }, [
+                                      _c("td", [
+                                        _c("b", [
+                                          _vm._v(_vm._s(skill.technology))
+                                        ])
+                                      ]),
+                                      _vm._v(" "),
+                                      skill.years < 5
+                                        ? _c("td", [
+                                            _vm._v(_vm._s(skill.years) + "年")
+                                          ])
+                                        : _c("td", [_vm._v("5年以上")])
+                                    ])
+                                  }),
+                                  0
+                                )
+                              ]
+                            )
+                          : _c(
+                              "table",
+                              { staticClass: "table table-borderless" },
+                              [
+                                _c(
+                                  "tbody",
+                                  _vm._l(category.skills, function(skill) {
+                                    return _c("tr", { key: skill.id }, [
+                                      _c("td", [
+                                        _c("b", [
+                                          _vm._v(_vm._s(skill.technology))
+                                        ])
+                                      ])
+                                    ])
+                                  }),
+                                  0
+                                )
+                              ]
+                            )
                       ])
                     ])
                   ]

@@ -180,10 +180,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 
@@ -1550,7 +1546,7 @@ var render = function() {
           "div",
           { staticClass: "container text-center" },
           [
-            _c("h1", [_vm._v("プロフィール")]),
+            _c("p", { staticClass: "page-title" }, [_vm._v("プロフィール")]),
             _vm._v(" "),
             _c("div", { staticClass: "row justify-content-center mt-md-5" }, [
               _c("div", { staticClass: "col-md-5" }, [
@@ -1562,14 +1558,8 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "col-md-5 mt-3 text-left" }, [
                 _c("div", { staticClass: "row" }, [
-                  _c("div", { staticClass: "col-md-12 minh-300" }, [
-                    _c("p", [
-                      _vm._v(
-                        "\n                  " +
-                          _vm._s(_vm.profile.content) +
-                          "\n              "
-                      )
-                    ])
+                  _c("div", { staticClass: "col-md-12 minh-300 space-pre" }, [
+                    _vm._v(_vm._s(_vm.profile.content))
                   ]),
                   _vm._v(" "),
                   _c("div", { staticClass: "col-md-12" }, [
@@ -1578,9 +1568,17 @@ var render = function() {
                         _c("th", [_vm._v("GitHub")]),
                         _vm._v(" "),
                         _c("td", [
-                          _c("a", { attrs: { href: _vm.profile.git_url } }, [
-                            _vm._v(_vm._s(_vm.profile.git_account))
-                          ])
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                rel: "noopener",
+                                href: _vm.profile.git_url
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.profile.git_account))]
+                          )
                         ])
                       ]),
                       _vm._v(" "),
@@ -1590,7 +1588,13 @@ var render = function() {
                         _c("td", [
                           _c(
                             "a",
-                            { attrs: { href: _vm.profile.twitter_url } },
+                            {
+                              attrs: {
+                                target: "_blank",
+                                rel: "noopener",
+                                href: _vm.profile.twitter_url
+                              }
+                            },
                             [_vm._v(_vm._s(_vm.profile.twitter_account))]
                           )
                         ])
@@ -1600,9 +1604,17 @@ var render = function() {
                         _c("th", [_vm._v("Qiita")]),
                         _vm._v(" "),
                         _c("td", [
-                          _c("a", { attrs: { href: _vm.profile.qiita_url } }, [
-                            _vm._v(_vm._s(_vm.profile.qiita_account))
-                          ])
+                          _c(
+                            "a",
+                            {
+                              attrs: {
+                                target: "_blank",
+                                rel: "noopener",
+                                href: _vm.profile.qiita_url
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.profile.qiita_account))]
+                          )
                         ])
                       ])
                     ])

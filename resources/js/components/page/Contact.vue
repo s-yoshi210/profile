@@ -5,7 +5,7 @@
   <!-- メイン -->
   <main class="contact mt-4">
     <div class="container">
-      <h1 class="mb-4">お問い合わせ</h1>
+      <p class="page-title mb-4">お問い合わせ</p>
       <div class="row justify-content-center">
         <div class="col-md-9 py-4">
           <form @submit.prevent="postInquiry" v-show="!emailSent">

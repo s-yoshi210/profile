@@ -18,6 +18,10 @@ body {
 
     main {
         //flex: 1;
+      .page-title {
+        font-size: 1.8rem;
+        font-family: bold;
+      }
     }
     .minh-300 {
         min-height: 300px;
@@ -29,4 +33,15 @@ body {
     .emailSentMessage {
         font-size: 1.2rem;
     }
+}
+
+@media screen and (min-width: 768px) {
+  #app {
+    main {
+      .page-title {
+        font-size: 2rem;
+        font-family: bold;
+      }
+    }
+  }
 }
