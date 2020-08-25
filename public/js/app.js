@@ -2234,6 +2234,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -4403,7 +4405,19 @@ var render = function() {
                               staticClass:
                                 "col-12 col-md-10 py-3 px-3 space-pre"
                             },
-                            [_vm._v(_vm._s(development.demo))]
+                            [
+                              _c(
+                                "a",
+                                {
+                                  attrs: {
+                                    target: "_blank",
+                                    rel: "noopener",
+                                    href: development.demo
+                                  }
+                                },
+                                [_vm._v(_vm._s(development.demo))]
+                              )
+                            ]
                           )
                         ]),
                         _vm._v(" "),

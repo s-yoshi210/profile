@@ -32,7 +32,9 @@
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">サイト</div>
-                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ development.demo }}</div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">
+                  <a target="_blank" rel="noopener" :href="development.demo">{{ development.demo }}</a>
+                </div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold py-2 text-center">コメント</div>
