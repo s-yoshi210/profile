@@ -8,36 +8,46 @@
       <div class="row justify-content-center">
         <div class="col-md-10 py-4" v-for="development in developments" :key="development.id">
           <div class="card text-left">
-            <div class="card-header font-weight-bold">
+            <div class="card-header bg-success text-white font-weight-bold">
                 <i class="far fa-file-code mx-3"></i><span>{{ development.title }}</span>
             </div>
-            <div class="card-body table-responsive">
-              <table class="table">
-                <tr>
-                  <th class="text-center">開発理由</th>
-                  <td><pre>{{ development.reason }}</pre></td>
-                </tr>
-                <tr>
-                  <th class="text-center">内容</th>
-                  <td><pre>{{ development.content }}</pre></td>
-                </tr>
-                <tr>
-                  <th class="text-center">開発環境</th>
-                  <td><pre>{{ development.development }}</pre></td>
-                </tr>
-                <tr>
-                  <th class="text-center">GitHub</th>
-                  <td><a target="_blank" rel="noopener" :href="development.git_url">こちら</a></td>
-                </tr>
-                <tr>
-                  <th class="text-center">デモサイト</th>
-                  <td><pre>{{ development.demo }}</pre></td>
-                </tr>
-                <tr>
-                  <th class="text-center">コメント</th>
-                  <td><pre>{{ development.comment }}</pre></td>
-                </tr>
-              </table>
+            <div class="card-body">
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">開発理由</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <pre>{{ development.reason }}</pre>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">内容</div>
+                <div class="col-12 col-md-10 py-3 px-2 px-3">
+                  <pre>{{ development.content }}</pre>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">開発環境</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <pre>{{ development.development }}</pre>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">GitHub</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <a target="_blank" rel="noopener" :href="development.git_url">こちら</a>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">サイト</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <pre>{{ development.demo }}</pre>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold py-2 text-center">コメント</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <pre>{{ development.comment }}</pre>
+                </div>
+              </div>
             </div>
           </div>
         </div>

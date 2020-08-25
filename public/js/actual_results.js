@@ -179,6 +179,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -1558,7 +1562,10 @@ var render = function() {
                     _c("div", { staticClass: "card text-left" }, [
                       _c(
                         "div",
-                        { staticClass: "card-header font-weight-bold" },
+                        {
+                          staticClass:
+                            "card-header bg-primary text-white font-weight-bold"
+                        },
                         [
                           _c("i", { staticClass: "fas fa-tasks mx-3" }),
                           _c("span", [_vm._v(_vm._s(result.title))])
@@ -1566,34 +1573,55 @@ var render = function() {
                       ),
                       _vm._v(" "),
                       _c("div", { staticClass: "card-body" }, [
-                        _c("table", { staticClass: "table" }, [
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("案件内容")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _c("pre", [_vm._v(_vm._s(result.content))])
-                            ])
-                          ]),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("案件内容")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("担当業務")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [_c("pre", [_vm._v(_vm._s(result.job))])])
-                          ]),
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [_c("pre", [_vm._v(_vm._s(result.content))])]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("担当業務")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("開発環境")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _c("pre", [_vm._v(_vm._s(result.environment))])
-                            ])
-                          ])
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [_c("pre", [_vm._v(_vm._s(result.job))])]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("開発環境")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [_c("pre", [_vm._v(_vm._s(result.environment))])]
+                          )
                         ])
                       ])
                     ])

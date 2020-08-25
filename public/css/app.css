@@ -103,6 +103,28 @@ body {
   width: 120px;
 }
 
+@media screen and (max-width: 768px) {
+  .actual_results .card-header {
+    text-align: center;
+  }
+
+  .actual_results .card-body .header {
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .actual_results .card-body .row {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .actual_results .card-body .row .header {
+    padding: 1rem 0 1rem 0;
+  }
+}
+
 .development .card-body {
   padding: 0 1.25rem 0 1.25rem;
 }
@@ -113,5 +135,27 @@ body {
 
 .development table th {
   width: 120px;
+}
+
+@media screen and (max-width: 768px) {
+  .development .card-header {
+    text-align: center;
+  }
+
+  .development .card-body .header {
+    padding: 0.5rem 0 0.5rem 0;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .development .card-body .row {
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  .development .card-body .row .header {
+    padding: 1rem 0 1rem 0;
+  }
 }
 

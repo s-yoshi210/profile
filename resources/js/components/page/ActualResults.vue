@@ -8,24 +8,28 @@
       <div class="row justify-content-center">
         <div class="col-md-10 py-3" v-for="result in actual_results" :key="result.id">
           <div class="card text-left">
-            <div class="card-header font-weight-bold">
+            <div class="card-header bg-primary text-white font-weight-bold">
               <i class="fas fa-tasks mx-3"></i><span>{{ result.title }}</span>
             </div>
             <div class="card-body">
-              <table class="table">
-                <tr>
-                  <th class="text-center">案件内容</th>
-                  <td><pre>{{ result.content }}</pre></td>
-                </tr>
-                <tr>
-                  <th  class="text-center">担当業務</th>
-                  <td><pre>{{ result.job }}</pre></td>
-                </tr>
-                <tr>
-                  <th  class="text-center">開発環境</th>
-                  <td><pre>{{ result.environment }}</pre></td>
-                </tr>
-              </table>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">案件内容</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <pre>{{ result.content }}</pre>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">担当業務</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <pre>{{ result.job }}</pre>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-2 header font-weight-bold text-center">開発環境</div>
+                <div class="col-12 col-md-10 py-3 px-3">
+                  <pre>{{ result.environment }}</pre>
+                </div>
+              </div>
             </div>
           </div>
         </div>

@@ -191,6 +191,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1572,53 +1582,86 @@ var render = function() {
                     _c("div", { staticClass: "card text-left" }, [
                       _c(
                         "div",
-                        { staticClass: "card-header font-weight-bold" },
+                        {
+                          staticClass:
+                            "card-header bg-success text-white font-weight-bold"
+                        },
                         [
                           _c("i", { staticClass: "far fa-file-code mx-3" }),
                           _c("span", [_vm._v(_vm._s(development.title))])
                         ]
                       ),
                       _vm._v(" "),
-                      _c("div", { staticClass: "card-body table-responsive" }, [
-                        _c("table", { staticClass: "table" }, [
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("開発理由")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _c("pre", [_vm._v(_vm._s(development.reason))])
-                            ])
-                          ]),
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("開発理由")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("内容")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _c("pre", [_vm._v(_vm._s(development.content))])
-                            ])
-                          ]),
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [_c("pre", [_vm._v(_vm._s(development.reason))])]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("内容")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("開発環境")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-2 px-3" },
+                            [_c("pre", [_vm._v(_vm._s(development.content))])]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("開発環境")]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [
                               _c("pre", [
                                 _vm._v(_vm._s(development.development))
                               ])
-                            ])
-                          ]),
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("GitHub")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("GitHub")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [
                               _c(
                                 "a",
                                 {
@@ -1630,28 +1673,42 @@ var render = function() {
                                 },
                                 [_vm._v("こちら")]
                               )
-                            ])
-                          ]),
+                            ]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold text-center"
+                            },
+                            [_vm._v("サイト")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("デモサイト")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _c("pre", [_vm._v(_vm._s(development.demo))])
-                            ])
-                          ]),
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [_c("pre", [_vm._v(_vm._s(development.demo))])]
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "row" }, [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "col-12 col-md-2 header font-weight-bold py-2 text-center"
+                            },
+                            [_vm._v("コメント")]
+                          ),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("th", { staticClass: "text-center" }, [
-                              _vm._v("コメント")
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [
-                              _c("pre", [_vm._v(_vm._s(development.comment))])
-                            ])
-                          ])
+                          _c(
+                            "div",
+                            { staticClass: "col-12 col-md-10 py-3 px-3" },
+                            [_c("pre", [_vm._v(_vm._s(development.comment))])]
+                          )
                         ])
                       ])
                     ])
