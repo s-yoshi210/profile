@@ -14,21 +14,15 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">開発理由</div>
-                <div class="col-12 col-md-10 py-3 px-3">
-                  <pre>{{ development.reason }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ development.reason }}</div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">内容</div>
-                <div class="col-12 col-md-10 py-3 px-2 px-3">
-                  <pre>{{ development.content }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-2 px-3 space-pre">{{ development.content }}</div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">開発環境</div>
-                <div class="col-12 col-md-10 py-3 px-3">
-                  <pre>{{ development.development }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ development.development }}</div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">GitHub</div>
@@ -38,15 +32,11 @@
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">サイト</div>
-                <div class="col-12 col-md-10 py-3 px-3">
-                  <pre>{{ development.demo }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ development.demo }}</div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold py-2 text-center">コメント</div>
-                <div class="col-12 col-md-10 py-3 px-3">
-                  <pre>{{ development.comment }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ development.comment }}</div>
               </div>
             </div>
           </div>

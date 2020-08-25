@@ -177,12 +177,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -1585,8 +1579,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(result.content))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(result.content))]
                           )
                         ]),
                         _vm._v(" "),
@@ -1602,8 +1599,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(result.job))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(result.job))]
                           )
                         ]),
                         _vm._v(" "),
@@ -1619,8 +1619,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(result.environment))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(result.environment))]
                           )
                         ])
                       ])

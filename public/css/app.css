@@ -51,6 +51,10 @@ body {
   font-family: bold;
 }
 
+#app main .space-pre {
+  white-space: pre-wrap;
+}
+
 #app .minh-300 {
   min-height: 300px;
 }
@@ -74,10 +78,6 @@ body {
 #app .profile img {
   width: 100px;
   height: 100px;
-}
-
-#app .profile .space-pre {
-  white-space: pre;
 }
 
 @media screen and (min-width: 768px) {

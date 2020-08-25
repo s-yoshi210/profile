@@ -2030,12 +2030,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2187,16 +2181,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layout_TheHeader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../layout/TheHeader */ "./resources/js/components/layout/TheHeader.vue");
 /* harmony import */ var _layout_TheFooter__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../layout/TheFooter */ "./resources/js/components/layout/TheFooter.vue");
 /* harmony import */ var _Loading__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../Loading */ "./resources/js/components/Loading.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 //
 //
 //
@@ -3925,8 +3909,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(result.content))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(result.content))]
                           )
                         ]),
                         _vm._v(" "),
@@ -3942,8 +3929,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(result.job))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(result.job))]
                           )
                         ]),
                         _vm._v(" "),
@@ -3959,8 +3949,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(result.environment))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(result.environment))]
                           )
                         ])
                       ])
@@ -4317,8 +4310,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(development.reason))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(development.reason))]
                           )
                         ]),
                         _vm._v(" "),
@@ -4334,8 +4330,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-2 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(development.content))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-2 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(development.content))]
                           )
                         ]),
                         _vm._v(" "),
@@ -4351,12 +4350,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [
-                              _c("pre", [
-                                _vm._v(_vm._s(development.development))
-                              ])
-                            ]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(development.development))]
                           )
                         ]),
                         _vm._v(" "),
@@ -4401,8 +4399,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(development.demo))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(development.demo))]
                           )
                         ]),
                         _vm._v(" "),
@@ -4418,8 +4419,11 @@ var render = function() {
                           _vm._v(" "),
                           _c(
                             "div",
-                            { staticClass: "col-12 col-md-10 py-3 px-3" },
-                            [_c("pre", [_vm._v(_vm._s(development.comment))])]
+                            {
+                              staticClass:
+                                "col-12 col-md-10 py-3 px-3 space-pre"
+                            },
+                            [_vm._v(_vm._s(development.comment))]
                           )
                         ])
                       ])

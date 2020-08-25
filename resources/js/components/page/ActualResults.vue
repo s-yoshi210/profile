@@ -14,21 +14,15 @@
             <div class="card-body">
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">案件内容</div>
-                <div class="col-12 col-md-10 py-3 px-3">
-                  <pre>{{ result.content }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ result.content }}</div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">担当業務</div>
-                <div class="col-12 col-md-10 py-3 px-3">
-                  <pre>{{ result.job }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ result.job }}</div>
               </div>
               <div class="row">
                 <div class="col-12 col-md-2 header font-weight-bold text-center">開発環境</div>
-                <div class="col-12 col-md-10 py-3 px-3">
-                  <pre>{{ result.environment }}</pre>
-                </div>
+                <div class="col-12 col-md-10 py-3 px-3 space-pre">{{ result.environment }}</div>
               </div>
             </div>
           </div>
