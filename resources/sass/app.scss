@@ -1,8 +1,8 @@
-@import "layout/header";
-@import "layout/footer";
-@import "layout/layout";
-@import "pages/home";
-@import "pages/skill";
-@import "pages/actual_result";
-@import "pages/development";
-@import "pages/contact";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/layout";
+@use "pages/home";
+@use "pages/skill";
+@use "pages/actual_result";
+@use "pages/development";
+@use "pages/contact";

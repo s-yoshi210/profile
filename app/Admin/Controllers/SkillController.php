@@ -32,6 +32,7 @@ class SkillController extends AdminController
         $grid->column('category.categorie', __('カテゴリ'));
         $grid->column('technology', __('技術'));
         $grid->column('years', __('経験年数'));
+        $grid->column('level', __('習熟度'));
         $grid->column('created_at', __('作成日時'));
         $grid->column('updated_at', __('更新日時'));
 
@@ -52,6 +53,7 @@ class SkillController extends AdminController
         $show->field('category.categorie', __('カテゴリ'));
         $show->field('technology', __('技術'));
         $show->field('years', __('経験年数'));
+        $show->field('level', __('習熟度'));
         $show->field('created_at', __('作成日時'));
         $show->field('updated_at', __('更新日時'));
 
@@ -72,6 +74,7 @@ class SkillController extends AdminController
         $form->select('categorie_id', __('カテゴリ'))->options($categories);
         $form->text('technology', __('技術'));
         $form->number('years', __('経験年数'));
+        $form->number('level', __('習熟度'));
 
         return $form;
     }

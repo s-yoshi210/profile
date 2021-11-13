@@ -5,10 +5,11 @@ mix.js('resources/js/home.js', 'public/js')
     .js('resources/js/actual_results.js', 'public/js')
     .js('resources/js/development.js', 'public/js')
     .js('resources/js/contact.js', 'public/js')
-    .js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css', {
-      implementation: require('node-sass')
-    });
+    .js('resources/js/app.js', 'public/js').vue()
+    .sass('resources/sass/app.scss', 'public/css');
+    // .sass('resources/sass/app.scss', 'public/css', {
+    //   implementation: require('node-sass')
+    // });
 
 mix.browserSync({
   files: [
