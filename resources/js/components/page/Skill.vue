@@ -18,7 +18,7 @@
                   <tr>
                     <th scope="col">技術</th>
                     <!--                  <th scope="col">経験年数</th>-->
-                    <th scope="col">レベル</th>
+                    <th scope="col">Level（自己評価）</th>
                   </tr>
                   </thead>
                   <tbody>

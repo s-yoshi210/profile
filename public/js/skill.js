@@ -1166,7 +1166,7 @@ var staticRenderFns = [
       _c("tr", [
         _c("th", { attrs: { scope: "col" } }, [_vm._v("技術")]),
         _vm._v(" "),
-        _c("th", { attrs: { scope: "col" } }, [_vm._v("レベル")]),
+        _c("th", { attrs: { scope: "col" } }, [_vm._v("Level（自己評価）")]),
       ]),
     ])
   },
