@@ -1087,7 +1087,7 @@ var render = function () {
                                   "tbody",
                                   _vm._l(category.skills, function (skill) {
                                     return _c("tr", { key: skill.id }, [
-                                      _c("td", [
+                                      _c("td", { staticClass: "text-left" }, [
                                         _c("b", [
                                           _vm._v(_vm._s(skill.technology)),
                                         ]),

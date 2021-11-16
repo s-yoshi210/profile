@@ -23,7 +23,7 @@
                   </thead>
                   <tbody>
                   <tr v-for="skill in category.skills" :key="skill.id">
-                    <td><b>{{ skill.technology }}</b></td>
+                    <td class="text-left"><b>{{ skill.technology }}</b></td>
                     <td v-if="skill.level === 5">★★★★★</td>
                     <td v-else-if="skill.level === 4">★★★★☆</td>
                     <td v-else-if="skill.level === 3">★★★☆☆</td>
